@@ -1,12 +1,13 @@
 package persistence;
 
 import christmas.port.out.OrderRepository;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryOrderRepository implements OrderRepository {
 
-  private final Map<String, Integer> board = new ConcurrentHashMap<>();
+  private final Map<String, Integer> board = new LinkedHashMap<>();
 
   @Override
   public void save(String menu, int menuCount) {

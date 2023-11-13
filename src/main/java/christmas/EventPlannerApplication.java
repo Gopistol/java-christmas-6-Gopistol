@@ -1,6 +1,5 @@
 package christmas;
 
-import christmas.domain.badge.Badge;
 import christmas.domain.policy.DiscountPolicy;
 import christmas.domain.policy.PlannerPolicy;
 import christmas.port.in.BenefitUseCase;
@@ -95,7 +94,7 @@ public class EventPlannerApplication implements Runnable {
 
   private void getEventBadge() {
     var totalBenefit = benefitUseCase.totalBenefitAmount();
-    Badge badge = benefitUseCase.getEventBadge(totalBenefit);
+    var badge = benefitUseCase.getEventBadge(totalBenefit);
     outputView.printEventBadge(badge);
   }
 }

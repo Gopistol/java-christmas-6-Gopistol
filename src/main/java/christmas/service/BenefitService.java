@@ -1,7 +1,6 @@
 package christmas.service;
 
 import christmas.domain.badge.Badge;
-import christmas.domain.policy.DiscountPolicy;
 import christmas.port.in.BenefitUseCase;
 import java.util.Map;
 import persistence.InMemoryBenefitRepository;

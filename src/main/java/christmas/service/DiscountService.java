@@ -6,8 +6,8 @@ import christmas.domain.policy.PlannerPolicy;
 import christmas.domain.menu.category.Dessert;
 import christmas.domain.menu.category.Main;
 import christmas.port.in.DiscountUseCase;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import persistence.InMemoryBenefitRepository;
 import persistence.InMemoryOrderRepository;
 
@@ -35,15 +35,15 @@ public class DiscountService extends PlannerPolicy implements DiscountUseCase {
       return;
     }
 
-    Map<String, Integer> benefitBoard = new ConcurrentHashMap<>();
+    Map<String, Integer> benefitBoard = new LinkedHashMap<>();
     benefitBoard.put(DiscountPolicy.CHRISTMAS_D_DAY_DISCOUNT.getDescription(),
         saveDDayDiscount(date));
-    benefitBoard.put(DiscountPolicy.SPECIAL_DISCOUNT.getDescription(), saveSpecialDiscount(date));
 
     String weekDiscountCategory = getWeekDiscountCategory(date);
     int discount = getWeekDiscount(weekDiscountCategory);
 
     benefitBoard.put(weekDiscountCategory, discount);
+    benefitBoard.put(DiscountPolicy.SPECIAL_DISCOUNT.getDescription(), saveSpecialDiscount(date));
     benefitBoard.put(DiscountPolicy.GIVEAWAY_EVENT.getDescription(),
         saveGiveAwayDiscount(totalOrderPrice));
 
