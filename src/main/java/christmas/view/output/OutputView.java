@@ -10,17 +10,17 @@ public class OutputView extends TextConstants implements Output {
 
   @Override
   public void printGuideMessage() {
-    print(GuideMessage.INTRO + NEW_LINE);
+    print(GuideMessage.INTRO);
   }
 
   @Override
   public void printDateRequest() {
-    print(GuideMessage.EXPECTED_VISIT_DATE + NEW_LINE);
+    print(GuideMessage.EXPECTED_VISIT_DATE);
   }
 
   @Override
   public void printOrderRequest() {
-    print(GuideMessage.ORDER_MENU_NAME_AMOUNT + NEW_LINE);
+    print(GuideMessage.ORDER_MENU_NAME_AMOUNT);
   }
 
   @Override
