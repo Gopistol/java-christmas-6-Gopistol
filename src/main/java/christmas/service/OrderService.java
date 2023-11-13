@@ -28,6 +28,7 @@ public class OrderService extends TextConstants implements OrderUseCase {
       List<String> orderList = splitOrderBySeparator(order);
 
       String menu = orderList.get(0);
+      validateExistingMenu(menu);
       validateDuplicatedMenu(menu);
       int menuCount = Integer.parseInt(orderList.get(1));
 
@@ -102,5 +103,9 @@ public class OrderService extends TextConstants implements OrderUseCase {
       throw new IllegalStateException(ErrorMessage.ERROR_MESSAGE_PREFIX +
           ErrorMessage.INVALID_ORDER_KIND);
     }
+  }
+
+  private void validateExistingMenu(String menu) {
+    MenuManager.getPriceByMenu(menu);
   }
 }

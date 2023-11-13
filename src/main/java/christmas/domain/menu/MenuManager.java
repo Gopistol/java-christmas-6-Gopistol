@@ -22,6 +22,6 @@ public class MenuManager {
       return Main.getPrize(menu);
     }
     throw new IllegalStateException(ErrorMessage.ERROR_MESSAGE_PREFIX +
-        ErrorMessage.INVALID_MENU_NAME);
+        ErrorMessage.INVALID_MENU_NAME + menu);
   }
 }
