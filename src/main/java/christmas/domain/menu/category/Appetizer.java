@@ -1,6 +1,6 @@
 package christmas.domain.menu.category;
 
-import core.ErrorMessage;
+import christmas.core.ErrorMessage;
 
 public enum Appetizer {
 

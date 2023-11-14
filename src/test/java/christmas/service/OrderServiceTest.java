@@ -1,13 +1,13 @@
 package christmas.service;
 
-import core.ErrorMessage;
+import christmas.core.ErrorMessage;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import persistence.InMemoryOrderRepository;
+import christmas.persistence.InMemoryOrderRepository;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,7 +29,7 @@ public class OrderServiceTest {
   // 기능 테스트
   @Test
   void testSaveOrder() {
-    String orders = "Menu1-2,Menu2-3,Menu3-1";
+    String orders = "양송이수프-2,초코케이크-3,제로콜라-1";
 
     orderService.saveOrder(orders);
 

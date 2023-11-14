@@ -3,7 +3,7 @@ package christmas.service;
 import christmas.domain.badge.Badge;
 import christmas.port.in.BenefitUseCase;
 import java.util.Map;
-import persistence.InMemoryBenefitRepository;
+import christmas.persistence.InMemoryBenefitRepository;
 
 public class BenefitService implements BenefitUseCase {
 

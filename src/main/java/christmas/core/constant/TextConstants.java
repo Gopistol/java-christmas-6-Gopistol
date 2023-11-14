@@ -1,4 +1,4 @@
-package core.constant;
+package christmas.core.constant;
 
 public class TextConstants {
 

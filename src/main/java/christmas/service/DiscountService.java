@@ -8,8 +8,8 @@ import christmas.domain.menu.category.Main;
 import christmas.port.in.DiscountUseCase;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import persistence.InMemoryBenefitRepository;
-import persistence.InMemoryOrderRepository;
+import christmas.persistence.InMemoryBenefitRepository;
+import christmas.persistence.InMemoryOrderRepository;
 
 public class DiscountService extends PlannerPolicy implements DiscountUseCase {
 

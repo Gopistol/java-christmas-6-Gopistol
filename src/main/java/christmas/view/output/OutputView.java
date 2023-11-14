@@ -1,8 +1,8 @@
 package christmas.view.output;
 
 import christmas.domain.badge.Badge;
-import core.GuideMessage;
-import core.constant.TextConstants;
+import christmas.core.GuideMessage;
+import christmas.core.constant.TextConstants;
 import java.text.NumberFormat;
 import java.util.Map;
 

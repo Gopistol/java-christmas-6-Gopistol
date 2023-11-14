@@ -1,4 +1,4 @@
-package core;
+package christmas.core;
 
 public class GuideMessage {
 
