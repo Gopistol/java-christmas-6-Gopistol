@@ -1,9 +1,9 @@
 package christmas.view.input;
 
 import camp.nextstep.edu.missionutils.Console;
-import core.ErrorMessage;
+import christmas.core.ErrorMessage;
 import christmas.domain.policy.PlannerPolicy;
-import core.constant.TextConstants;
+import christmas.core.constant.TextConstants;
 import java.util.StringTokenizer;
 
 

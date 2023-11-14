@@ -1,4 +1,4 @@
-package persistence;
+package christmas.persistence;
 
 import christmas.port.out.BenefitRepository;
 import java.util.LinkedHashMap;

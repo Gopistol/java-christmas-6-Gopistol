@@ -4,7 +4,7 @@ import christmas.domain.menu.category.Appetizer;
 import christmas.domain.menu.category.Dessert;
 import christmas.domain.menu.category.Drink;
 import christmas.domain.menu.category.Main;
-import core.ErrorMessage;
+import christmas.core.ErrorMessage;
 
 public class MenuManager {
 
@@ -21,7 +21,7 @@ public class MenuManager {
     if (Main.contains(menu)) {
       return Main.getPrize(menu);
     }
-    throw new IllegalStateException(ErrorMessage.ERROR_MESSAGE_PREFIX +
+    throw new IllegalArgumentException(ErrorMessage.ERROR_MESSAGE_PREFIX +
         ErrorMessage.INVALID_MENU_NAME + menu);
   }
 }

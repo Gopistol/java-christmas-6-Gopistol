@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import christmas.domain.badge.Badge;
-import persistence.InMemoryBenefitRepository;
+import christmas.persistence.InMemoryBenefitRepository;
 
 class BenefitServiceTest {
 

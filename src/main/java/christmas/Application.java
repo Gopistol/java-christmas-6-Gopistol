@@ -5,8 +5,8 @@ import christmas.service.DiscountService;
 import christmas.service.OrderService;
 import christmas.view.input.InputView;
 import christmas.view.output.OutputView;
-import persistence.InMemoryBenefitRepository;
-import persistence.InMemoryOrderRepository;
+import christmas.persistence.InMemoryBenefitRepository;
+import christmas.persistence.InMemoryOrderRepository;
 
 public class Application {
 
