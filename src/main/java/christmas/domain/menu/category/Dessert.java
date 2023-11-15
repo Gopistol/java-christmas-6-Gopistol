@@ -29,6 +29,6 @@ public enum Dessert {
         return dessert.prize;
       }
     }
-    throw new IllegalArgumentException(ErrorMessage.INVALID_MENU_NAME + menu);
+    throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_FORMAT + menu);
   }
 }

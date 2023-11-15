@@ -106,6 +106,10 @@ public class OrderService extends TextConstants implements OrderUseCase {
   }
 
   private void validateExistingMenu(String menu) {
-    MenuManager.getPriceByMenu(menu);
+    int price = MenuManager.getPriceByMenu(menu);
+    if (price == 0) {
+      throw new IllegalArgumentException(ErrorMessage.ERROR_MESSAGE_PREFIX +
+          ErrorMessage.INVALID_ORDER_FORMAT + menu);
+    }
   }
 }

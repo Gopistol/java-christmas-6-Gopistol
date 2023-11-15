@@ -12,6 +12,7 @@ import christmas.persistence.InMemoryOrderRepository;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -56,23 +57,49 @@ public class OrderServiceTest {
   @Test
   void testSaveOrderWithDuplicatedMenu() {
     Map<String, Integer> mockData = new HashMap<>();
-    mockData.put("Menu1", 2);
+    mockData.put("양송이수프", 2);
     when(inMemoryOrderRepository.findAll()).thenReturn(mockData);
 
-    String orders = "Menu1-2";
-    assertThrows(IllegalArgumentException.class, () -> orderService.saveOrder(orders));
+    String orders = "양송이수프-2";
+
+    Exception exception = assertThrows(IllegalArgumentException.class,
+        () -> orderService.saveOrder(orders));
+
+    String expectedMessage = "유효하지 않은 주문입니다";
+    String actualMessage = exception.getMessage();
+
+    assertTrue(actualMessage.contains(expectedMessage));
+  }
+
+  @DisplayName("메뉴판에 없는 메뉴를 입력하면 예외가 발생한다.")
+  @Test
+  void testValidateExistingMenu() {
+    String nonExistingMenu = "비존재메뉴-1";
+
+    Exception exception = assertThrows(IllegalArgumentException.class,
+        () -> orderService.saveOrder(nonExistingMenu));
+
+    String expectedMessage = "유효하지 않은 주문입니다";
+    String actualMessage = exception.getMessage();
+
+    assertTrue(actualMessage.contains(expectedMessage));
   }
 
   @DisplayName("입력한 메뉴의 총 개수가 20개가 넘어가면 예외가 발생한다.")
   @Test
   void testSaveOrderWithExceededMenuCount() {
     Map<String, Integer> mockData = new HashMap<>();
-    for (int i = 0; i < 21; i++) {
-      mockData.put("Menu" + i, 1);
-    }
+    mockData.put("양송이수프", 10);
+    mockData.put("제로콜라", 11);
     when(inMemoryOrderRepository.findAll()).thenReturn(mockData);
 
-    assertThrows(IllegalStateException.class, () -> orderService.listOrderBoard());
+    Exception exception = assertThrows(IllegalStateException.class,
+        () -> orderService.listOrderBoard());
+
+    String expectedMessage = "주문하실 메뉴의 총 개수는 20개 이하여야 합니다";
+    String actualMessage = exception.getMessage();
+
+    assertTrue(actualMessage.contains(expectedMessage));
   }
 
   @Test
