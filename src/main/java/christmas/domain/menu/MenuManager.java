@@ -21,7 +21,6 @@ public class MenuManager {
     if (Main.contains(menu)) {
       return Main.getPrize(menu);
     }
-    throw new IllegalArgumentException(ErrorMessage.ERROR_MESSAGE_PREFIX +
-        ErrorMessage.INVALID_MENU_NAME + menu);
+    return 0;
   }
 }

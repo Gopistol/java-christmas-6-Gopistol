@@ -30,6 +30,6 @@ public enum Main {
         return mainMenu.prize;
       }
     }
-    throw new IllegalArgumentException(ErrorMessage.INVALID_MENU_NAME + menu);
+    throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_FORMAT + menu);
   }
 }
