@@ -32,7 +32,6 @@ public class DiscountServiceTest extends PlannerPolicy {
     inMemoryOrderRepository = Mockito.mock(InMemoryOrderRepository.class);
     inMemoryBenefitRepository = Mockito.mock(InMemoryBenefitRepository.class);
     discountService = new DiscountService(inMemoryBenefitRepository, inMemoryOrderRepository);
-    orderService = new OrderService(inMemoryOrderRepository);
   }
 
   // 기능 테스트
